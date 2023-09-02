@@ -88,6 +88,10 @@
   <!---->
   {{ template "_internal/google_analytics.html" . }}
   <!---->
+  {{ if and .Site.Params.plausibleAnalytics .Site.Params.plausibleAnalytics.domain }}
+  {{- partial "plausible" . -}}
+  {{ end }}
+  <!---->
   {{ template "_internal/schema.html" . }}
   <!---->
   {{ template "_internal/twitter_cards.html" . }}
